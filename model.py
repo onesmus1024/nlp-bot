@@ -2,6 +2,7 @@ import random
 import json
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -10,12 +11,13 @@ from tensorflow.keras.preprocessing import sequence
 from sklearn.preprocessing import LabelEncoder
 from gtts import gTTS
 
-vocal_size=2000
+vocal_size=6000
 max_len=None
 label_len=None
 x_train=None
 y_train=None
 model=None
+history=None
 active_model=None
 tag=[]
 questions=[]
@@ -32,13 +34,13 @@ def get_data():
     global tag
     global questions
     global responses
-    with open("data/intent.json") as content:
+    with open("data/intent_v2.json") as content:
         data = json.load(content)
     # extract data from json file
     for intent in data['intents']:
-        responses[intent['intent']]=intent['responses']
-        for question in intent['text']:
-            tag.append(intent['intent'])
+        responses[intent['tag']]=intent['responses']
+        for question in intent['patterns']:
+            tag.append(intent['tag'])
             questions.append(question)
 
     # encode the tag and questions
@@ -56,7 +58,8 @@ def get_data():
 
 
 def create_model():
-    global model 
+    global model
+    global history
     model = keras.Sequential([
     layers.Input(max_len),
     layers.Embedding(vocal_size,10),
@@ -72,14 +75,13 @@ def create_model():
     history = model.fit(x_train,y_train,epochs=400)
     model.save("./saved_model")
 
-
-
-# plt.plot(history.history['loss'],label='loss')
-# plt.plot(history.history['accuracy'],label='accuracy')
-# plt.xlabel('Epoch')
-# plt.ylabel('loss')
-# plt.legend()
-# plt.show()
+def plot_graphs():
+    plt.plot(history.history['loss'],label='loss')
+    plt.plot(history.history['accuracy'],label='accuracy')
+    plt.xlabel('Epoch')
+    plt.ylabel('loss')
+    plt.legend()
+    plt.show()
 
 
 def predict(text):
