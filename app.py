@@ -13,5 +13,9 @@ CORS(app)
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json(force=True)
+    
+    if data['question'] == 'traiN':
+        model.create_model()
+        return jsonify({'prediction': 'Model trained successfully'})
     prediction = model.predict(data['question'])
     return jsonify({'prediction': prediction})

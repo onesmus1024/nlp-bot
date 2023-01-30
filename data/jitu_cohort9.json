@@ -1,0 +1,167 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "How are you",
+                "Is anyone there?",
+                "Hello",
+                "Good day",
+                "Hi there",
+                "How are you",
+                "Is anyone there?",
+                "Hey",
+                "Hola",
+                "Hello",
+                "Good day",
+                "Namaste",
+                "yo"
+            ],
+            "responses": [
+                "Welcome to Jitu cohort 9!",
+                "Hello, welcome to Jitu cohort 9!",
+                "Hi there, welcome to Jitu cohort 9!",
+                "Good to see you again, welcome to Jitu cohort 9!"
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "typescript",
+            "patterns": [
+                "What is typescript?",
+                "Can you explain typescript?",
+                "What are the features of typescript?",
+                "What makes typescript different from JavaScript?"
+            ],
+            "responses": [
+                "Typescript is a superset of JavaScript, meaning it is built on top of JavaScript and adds additional features and advantages to the language. These include syntax enhancements, type checking, and object-oriented programming capabilities."
+            ]
+        },
+        {
+            "tag": "typescript compiler",
+            "patterns": [
+                "How do I compile typescript?",
+                "What is the typescript compiler?",
+                "How do I convert typescript to JavaScript?"
+            ],
+            "responses": [
+                "In order to run typescript code in a browser, it needs to be compiled back to JavaScript. To do this, we need to install the typescript compiler by running the command 'npm install -g typescript' in the terminal. Once the compiler is installed, we can use the command 'tsc' followed by the filename to compile the typescript code. For example, 'tsc app.ts' will compile the file 'app.ts' to JavaScript."
+            ]
+        },
+        {
+            "tag": "typescript",
+            "patterns": [
+                "What are the benefits of using TypeScript?",
+                "Why use TypeScript?",
+                "What does TypeScript add to JavaScript?"
+            ],
+            "responses": [
+                "TypeScript adds static type-checking, improved error handling during development, enhanced tooling support in IDEs, and more maintainable code through the use of classes, types, modules, and interfaces."
+            ]
+        },
+        {
+            "tag": "name",
+            "patterns": [
+                "What is your name?",
+                "What should I call you?",
+                "What do I call you?",
+                "Can you tell me your name?"
+            ],
+            "responses": [
+                "My name is  Jitu cohort 9 ChatGPT",
+                "You can call me Jitu cohort 9 ChatGPT",
+                "I am Jitu cohort 9 ChatGPT",
+                "My name is Jitu cohort 9 ChatGPT, nice to meet you!"
+            ]
+        },
+        {
+            "tag": "typescript_compilation",
+            "patterns": [
+                "How do I compile typescript?",
+                "What command do I use to compile typescript?",
+                "How do I convert typescript to javascript?",
+                "Can you explain typescript compilation?",
+                "What is the process for compiling typescript?"
+            ],
+            "responses": [
+                "In order to compile typescript, you first need to install the typescript compiler by running the command 'npm install -g typescript' in your terminal. This installs the compiler globally on your system. Then, you can use the command 'tsc' followed by the file name (e.g. 'tsc app.ts') in your terminal to compile the typescript file into the equivalent javascript code.",
+                "It's important to note that typescript is not run in a browser, so in order to use it on a web page, it needs to be compiled to javascript. Compiling typescript can help you to catch errors early, and also make your code more readable and maintainable. Also you can use option like 'tsc --watch' to keep watch on your typescript files and automatically compile them when they change."
+            ]
+        },
+        {
+            "tag": "typescript_primitive_types",
+            "patterns": [
+                "What are the primitive data types in typescript?",
+                "Can you explain the different types of data in typescript?",
+                "What are the basic data types in typescript?",
+                "What is the difference between null and undefined in typescript?"
+            ],
+            "responses": [
+                "In typescript, there are several primitive data types: Number, String, Boolean, Symbol, Null, and Undefined. The Number type includes all numbers, without differentiation between floats, doubles, or integers. The String type includes all text values, which are wrapped inside single quotes, double quotes, or backticks. The Boolean type only holds true or false. The Symbol type is used as a unique identifier. The Null and Undefined types are used to signal absent or uninitialized values. Null is explicitly assigned by the programmer, while undefined is the default value of variables that have been declared but have not been assigned a value.",
+                "It's important to note that null and undefined are two different types in TypeScript, you can assign a variable to be of type 'null' or 'undefined', but they both indicate the absence of a value. This helps in catching bugs early and also make your code more readable."
+            ]
+        },
+        {
+            "tag": "type_annotation_vs_inference",
+            "patterns": [
+                "What is the difference between type annotation and type inference in typescript?",
+                "Can you explain type annotation and type inference?",
+                "How does typescript determine variable types?",
+                "What is type annotation and how does it differ from type inference in typescript?"
+            ],
+            "responses": [
+                "In typescript, type annotation is the process of explicitly telling the compiler the type of a variable. This is done by adding a colon (:) followed by the type after the variable name. For example: let myVariable: string = 'hello'. This is telling the compiler that the variable 'myVariable' is of type 'string'.On the other hand, Type inference is a feature where the compiler assigns the type of a variable based on the value assigned to it. For example: let myVariable = 'hello', in this case the compiler knows that the variable 'myVariable' is of type 'string' because a string value is assigned to it.Type inference is a powerful feature of TypeScript that allows developers to write code more quickly and with fewer errors, but sometimes it's not enough and you might need to use type annotation for better type checking and catch errors early."
+            ]
+        },
+        {
+            "tag": "typescript_reference_types",
+            "patterns": [
+                "What are the reference types in typescript?",
+                "Can you explain the different reference types in typescript?",
+                "What is the difference between an object type and an array type in typescript?",
+                "What are tuples and enums in typescript?",
+                "How do union types and literal types differ in typescript?"
+            ],
+            "responses": [
+                "In typescript, there are several reference types: Object Type, Array Type, Tuples, Enums, Union Type and Literal Types.Object Type is a JavaScript value with properties and their types. The Array Type is used to hold values of a specified datatype. Tuples are an array with a fixed-length array and they specify the types they are supposed to hold, how many values they are supposed to hold, and the order of the values. Enums are closely related to tuples, they are used to describe a value which could be one of a set of possible named constants. Union types help us to hold values that are either a string or a number in an array. Literal types uses union types to ensure that a value holds one of the defined types. Type aliases is used to create your own custom type.Type alias is a way to give a new name to an existing type and it is similar to a variable, but it can only be used to assign to a type. "
+            ]
+        },
+        {
+            "tag": "typescript_function_types",
+            "patterns": [
+                "What are function types in typescript?",
+                "Can you explain the different function types in typescript?",
+                "What is the function return type in typescript?",
+                "How does typescript handle function callbacks?"
+            ],
+            "responses": [
+                "In typescript, function types are used to specify the type of a function. Functions also have return types, because a function either returns something or returns void. Most of the time, we don’t define the return types of the function but typescript will always infer them for use.Function types can also be used as types, this means that you can use a function type as the type of a variable. This is useful when working with callback functions.When handling function with callbacks in typescript, we need to specify the function signature, including the type of parameters and return value, this helps the compiler to catch errors early.This way, even if the function is invoked in the future, the compiler will know how the function should be called and what it will return, which can help you catch errors early."
+            ]
+        },
+        {
+            "tag": "unknown_and_any_typescript",
+            "patterns": [
+                "What is the difference between unknown and any in typescript?",
+                "Can you explain unknown and any types in typescript?",
+                "How does typescript handle unknown and any types?",
+                "When should I use unknown or any in typescript?"
+            ],
+            "responses": [
+                "In typescript, the unknown type is used to indicate that the type of a variable is not known. We can assign anything to the unknown type but it is not assignable to any other type except unknown or any.On the other hand, the any type is used to indicate that a variable can hold any type of value. The main difference between unknown and any is that unknown is a more restrictive type and it requires explicit type checking before the value can be used, while any can be used without type checking.The any type is useful when you are working with third-party libraries and you don't have the type information. The unknown type is useful when you don't know the type at the time of writing the code but you know it will be known at runtime.In general, it's recommended to avoid using any and unknown types as much as possible, and instead, use more specific types to ensure type safety and catch errors early."
+            ]
+        },
+        {
+            "tag": "never_typescript",
+            "patterns": [
+                "What is the never type in typescript?",
+                "Can you explain the never type in typescript?",
+                "When should I use the never type in typescript?",
+                "What are the use cases of never type in typescript?"
+            ],
+            "responses": [
+                "In typescript, the never type is used to represent a state that will never exist. It is used to indicate that a function or a variable will never return a value or will never reach the end of its execution.An example of a use case for the never type is an infinite loop or a function that throws an error. This function is an example of a never type because it does not return a value or anything, only crashes the application.The never type can also be used to indicate that a variable or a function parameter will never have a certain value. For example, a function that takes a number parameter, but you know that it will never be zero, so you can use the never type to indicate that.In general, the never type is useful for catching errors early, by providing more information about the expected behavior of a function or a variable. It also helps to make the code more readable and understandable."
+            ]
+        }
+    ]
+}

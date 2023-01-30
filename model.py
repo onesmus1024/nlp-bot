@@ -3,6 +3,7 @@ import json
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -11,7 +12,7 @@ from tensorflow.keras.preprocessing import sequence
 from sklearn.preprocessing import LabelEncoder
 from gtts import gTTS
 
-vocal_size=6000
+vocal_size=2000
 max_len=None
 label_len=None
 x_train=None
@@ -22,6 +23,8 @@ active_model=None
 tag=[]
 questions=[]
 responses={}
+embedding_size=10
+hidden_size=64
 tokenizer = Tokenizer(num_words=vocal_size,oov_token='<oov>')
 le=LabelEncoder()
 
@@ -34,7 +37,7 @@ def get_data():
     global tag
     global questions
     global responses
-    with open("data/intent_v2.json") as content:
+    with open("data/jitu_cohort9.json") as content:
         data = json.load(content)
     # extract data from json file
     for intent in data['intents']:
@@ -65,14 +68,19 @@ def create_model():
     layers.Embedding(vocal_size,10),
     layers.Bidirectional(layers.LSTM(64,return_sequences=True)),
     layers.Bidirectional(layers.LSTM(64)),
-    layers.Flatten(),
+    layers.Dense(64,activation='relu'),
+    layers.Dropout(0.5),
     layers.Dense(label_len,activation='softmax')
     ])
 
+  
+
     model.summary()
     model.compile(loss='sparse_categorical_crossentropy',optimizer='adam',metrics=['accuracy'])
+    
 
     history = model.fit(x_train,y_train,epochs=400)
+    plot_graphs()
     model.save("./saved_model")
 
 def plot_graphs():
